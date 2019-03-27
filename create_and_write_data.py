@@ -6,7 +6,7 @@ import json
 # Get the service resource.
 dynamodb_resource = boto3.resource('dynamodb', region_name = 'us-east-1')
 dynamodb_client = boto3.client('dynamodb', region_name = 'us-east-1')
-table_name = 'taxi_rides'
+table_name = 'taxiTable'
 
 def create_taxi_table(cxn, table_name):
     cxn.create_table(
