@@ -1,9 +1,23 @@
 {
-  "name": "taxiService",
-  "description": "",
+  "name": "taxiservice",
   "version": "0.1.0",
   "dependencies": {},
   "devDependencies": {
     "serverless-python-requirements": "^4.3.0"
-  }
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/treybrooks/serverless_taxi_service.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/treybrooks/serverless_taxi_service/issues"
+  },
+  "homepage": "https://github.com/treybrooks/serverless_taxi_service#readme",
+  "description": ""
 }
