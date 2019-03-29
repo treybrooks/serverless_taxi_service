@@ -29,7 +29,7 @@ provider:
       - dynamodb:PutItem
       - dynamodb:UpdateItem
       - dynamodb:DeleteItem
-    Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/textsTable"
+    Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/taxiTable"
 
 # you can overwrite defaults here
 #  stage: dev
@@ -65,12 +65,19 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
+  list_resources:
     handler: handler.list_resources
     events:
       - http:
           path: list_resources
           method: get
+  request_ride:
+    handler: handler.request_ride
+    events:
+      - http:
+          path: request_ride
+          method: get
+
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
