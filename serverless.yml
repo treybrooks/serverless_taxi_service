@@ -20,6 +20,7 @@ service: taxiService # NOTE: update this with your service name
 provider:
   name: aws
   runtime: python3.7
+  memorySize: 256
   iamRoleStatements:
   - Effect: Allow
     Action:
@@ -71,12 +72,12 @@ functions:
       - http:
           path: list_resources
           method: get
-  request_ride:
-    handler: handler.request_ride
+  ride:
+    handler: handler.ride
     events:
       - http:
-          path: request_ride
-          method: get
+          path: ride
+          method: ANY
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events

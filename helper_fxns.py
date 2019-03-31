@@ -19,22 +19,13 @@ class DecimalEncoder(json.JSONEncoder):
 
 
 def request_ride(event_dict):
-    # client = boto3.client('dynamodb')
     table = dynamodb_resource.Table(table_name)
 
     fe = Attr('passenger_count').eq(event_dict['passenger_count']) & \
          Attr('PULocationID').eq(event_dict['pickup_location']) & \
          Attr('DOLocationID').eq(event_dict['dropoff_location'])
-    # pe = "#yr, title, info.rating"
-    # Expression Attribute Names for Projection Expression only.
-    ean = { "#yr": "year", }
-    esk = None
 
-    scan_response = table.scan(
-        FilterExpression=fe,
-        # ProjectionExpression=pe,
-        # ExpressionAttributeNames=ean
-    )
+    scan_response = table.scan(FilterExpression=fe)
 
     response = {
         "statusCode": 200,

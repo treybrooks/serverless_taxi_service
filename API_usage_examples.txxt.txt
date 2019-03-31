@@ -1,0 +1,33 @@
+curl -H "Content-Type: application/json" -X GET ${BASE_DOMAIN}/request_ride -d '{"pickup_datetime": "2018-12-01 00:56:40", "pickup_location": 164, "dropoff_location": 97, "passenger_count": 1}'
+
+curl -X GET http://taxiriderequests-env.iwmmxptmr2.us-east-1.elasticbeanstalk.com/ride -d "passenger_count=2&pickup_location=148&dropoff_location=234&pickup_datetime=2018-12-01 00:28:22"
+
+*Selecting Data (Ride Requests)*
+(1) Read in the yellow tripdata CSV
+(2) Form random groups of 1, 100, 1000, and 10000 rides
+(3) Use the client-server API GW to retrieve the rides.
+(4) Use a timer to find out how long each group took
+(5) Repeat each group 10? times
+*Inserting Data (Recording a Ride)*
+(1) Insert gibberish data… I can post what data I insert
+(2) Use a timer to find out how long it took
+(3) Repeat 10? times
+
+Cost
+Scenario
+Infrastructure management 
+Running the service for 1 months
+1,000,000 transactions over 1 month
+Database Server Cost 1 month
+
+Performance
+
+Scenario
+
+Insert a ride
+Select a ride
+Select first 100 rides for a given vendor
+Select first 1,000 rides for a given vendor
+Select first 10,000 rides for a given vendor
+Total money spent for rides starting at different pick up locations in a month
+Total money spent for rides ending at different drop off locations in a month
